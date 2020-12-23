@@ -9,15 +9,12 @@ namespace Lists
 
         {   // This is a shitty string for no reason.
             // Cound very well just be a WriteLine.
-            var names = new List<string> { "Hello ", "there." };
-            foreach (var name in names)
-                Console.Write(name);
+            var names = new List<string> { "Hello", "there." };
+            Console.Write(string.Join(" ", names));
             Console.WriteLine();
 
             // Inputs the two first numbers in the Fibonacci sequence.
-            // Starts a new list to hold all the values divisible by 3.
             var fibNum = new List<int> {1, 1 };
-            var fibDiv = new List<int> { };
 
             Console.WriteLine("Following is the first 20 numbers in the Fibanacci sequence.");
 
@@ -31,8 +28,10 @@ namespace Lists
                 fibNum.Add(pre + pre2);
             }
 
+            // Starts a new list to hold all the values divisible by 3.
             // Here it prints it all while also checking if you can divide them cleanly by 3.
             // If you can it adds it to the fibDiv list for later.
+            var fibDiv = new List<int> { };
             foreach (var num in fibNum)
             {
                 Console.WriteLine(num);
@@ -57,7 +56,9 @@ namespace Lists
             {
                 Console.WriteLine($"The following {fibDiv.Count} numbers are divisible by 3.");
                 foreach (var num in fibDiv)
+                {
                     Console.WriteLine(num);
+                }
             }
         }
     }
